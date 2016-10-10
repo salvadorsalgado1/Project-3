@@ -1,0 +1,25 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package game;
+
+/**
+ *Responsible for doing recursion. 
+ * Method called placeQueen() is what looks around to see if it has a neighboring queen. 
+ * Uses a two dimensional array. 8 rows and 8 columns.
+ * Would need a loop construct. 4 loops to check whether or not it can be attacked.
+ * Prof recommends doing a nested for loop.
+ * 
+ * 
+ */
+public class Game {
+
+   
+    public static void main(String[] args) {
+       Queens insert = new Queens();
+      insert.Queens();
+    }
+    
+}
