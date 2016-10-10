@@ -11,15 +11,24 @@ package game;
  * Uses a two dimensional array. 8 rows and 8 columns.
  * Would need a loop construct. 4 loops to check whether or not it can be attacked.
  * Prof recommends doing a nested for loop.
- * 
- * 
+ * board being equi. to marks. 
+ * To check diagnal, its going to take a nested for-loop.
+ *  return true;
+ * for(int column = 4; column <  board[3].length; column++)
+ *  if ( board[3] [column] == 1)
+ *  
+  
+ *  
  */
+ 
+ 
 public class Game {
 
    
     public static void main(String[] args) {
        Queens insert = new Queens();
-      insert.Queens();
+     
+       insert.Queens();
     }
     
 }
