@@ -1,0 +1,40 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package game;
+
+import java.util.Arrays;
+
+/**
+ *
+ * @author Student-HSLH133
+ */
+public class Queens {
+  // int[][] marks = new int [8][8];
+
+    
+  int marks[][]={{0,60,55,67,70},{62,65,70,70,81},{72,65,67,80,69}};
+    
+    public void Queens()
+   {
+      //
+      // System.out.print(Arrays.toString(array));
+       //System.out.print("\n\n\n");
+      
+       System.out.print( marks[2][1]+"\n\n");
+        
+       System.out.print( marks[2][3]+"\t\t"+marks[2][4]+"\n\n");
+         
+        System.out.print( marks[1][4]+"\n\n");
+          System.out.print( marks[2][1]+"\n\n");
+           System.out.print( marks[1][1]+"\n\n");
+   }
+    public void NewStack()
+    {
+        
+        
+    }
+    
+}
