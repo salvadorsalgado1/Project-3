@@ -6,44 +6,101 @@
 package game;
 
 import java.util.Arrays;
-
+import java.util.*;
 /**
  *
  * @author Student-HSLH133
  */
 public class Queens {
-   int[][] marks = new int [8][8];
+   int x ;
+   int y;
+   int a,b;
+       
+ int[][] board = new int[4][4];//the 2d array
+Scanner input = new Scanner(System.in);
+	//int VALUE is value you want to assign
 
- 
-//  int marks[][]={
-//      {0,60,55,67,70},
-//      {62,65,70,70,81},
-//      {72,65,67,80,69}};
-    
+	
+   
+
     public void Queens()
    {
      
       
-      for (int i = 0; i < marks.length; i++) {
-    for (int j = 0; j < marks[i].length; j++) {
-        System.out.print(marks[i][j] + " ");
-    }
-    System.out.println();
-}
-        //System.out.print(Arrays.deepToString(marks));
+      for (int i = 0; i < board.length; i++) 
+      {
+        for (int j = 0; j < board[i].length; j++) 
+        {
+        System.out.print(board[i][j] + " ");
+        }
+        System.out.println();
+      }
+        //System.out.print(Arrays.deepToString(board));
      
-        
-        
    }
+    
+    
     public void NewStack()
     {
+        
         
         
     }
     public void PlaceQueen()
     {  
+    
+        int board [] [] = new int [4][4];
+    System.out.print("Enter your row: ");
+        int a = input.nextInt();
+     System.out.print("Enter your column: ");
+     int b = input.nextInt();
+     System.out.println("Row: " + (a+1) +"\t"+"Column: "+( b+1));
+    
+     for(int x = 0 ; x < board[0].length; x++)
+
+	{
+            
+                 for(int y = 0 ; y < board[0].length; y++)
+	       {
+                   board[a][b] = 1;
+	           
+                   
+	       }
+
+	}
+     for (int x = 0; x < board.length; x++) 
+      {
+        for (int y = 0; y < board[0].length; y++) 
+        {
+        System.out.print(board[x][y] + " ");
+        }
+        System.out.println();
         
+      }
+     
+     if (board[0][0] == board [0][0])
+        
+         System.out.println("same");
+     else 
+         
+         System.out.println("Not same");
+       Check();
+     
+     
     }
+    
+    public int Check()
+    {
+       //this.PlaceQueen();
+      // int board[][] = new board [][];
+        if (board[0][0]  != board[3][2])
+      System.out.print("Solved");
+        else
+           return Check();
+        return Check();
+    }
+   
+    
     
 }
 
