@@ -99,7 +99,8 @@ Scanner input = new Scanner(System.in);
            return Check();
         return Check();
     }
-   
+   //Work on this portion for the recursion to work.
+   //May want to add a loop to check values if equal to 1 in each row/column.
     
     
 }
