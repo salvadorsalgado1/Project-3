@@ -15,6 +15,8 @@ public class Queens {
    int x ;
    int y;
    int a,b;
+//       int r1c1,r1c2,r1c3, r1c4;
+//       int r2c1,r2c2,r2c3, r2c4;
        
  int[][] board = new int[4][4];//the 2d array
 Scanner input = new Scanner(System.in);
@@ -25,8 +27,6 @@ Scanner input = new Scanner(System.in);
 
     public void Queens()
    {
-     
-      
       for (int i = 0; i < board.length; i++) 
       {
         for (int j = 0; j < board[i].length; j++) 
@@ -40,34 +40,29 @@ Scanner input = new Scanner(System.in);
    }
     
     
-    public void NewStack()
-    {
-        
-        
-        
-    }
+    
     public void PlaceQueen()
     {  
     
         int board [] [] = new int [4][4];
-    System.out.print("Enter your row: ");
-        int a = input.nextInt();
-     System.out.print("Enter your column: ");
-     int b = input.nextInt();
+//    System.out.print("Enter your row: ");
+//        int a = input.nextInt();
+//     System.out.print("Enter your column: ");
+//     int b = input.nextInt();
+       
+       
+       int a = 0;
+        int b = 0;
      System.out.println("Row: " + (a+1) +"\t"+"Column: "+( b+1));
     
      for(int x = 0 ; x < board[0].length; x++)
-
-	{
-            
+	{           
                  for(int y = 0 ; y < board[0].length; y++)
 	       {
-                   board[a][b] = 1;
-	           
-                   
+                   board[a][b] = 1;	                             
 	       }
-
 	}
+    
      for (int x = 0; x < board.length; x++) 
       {
         for (int y = 0; y < board[0].length; y++) 
@@ -78,30 +73,17 @@ Scanner input = new Scanner(System.in);
         
       }
      
-     if (board[0][0] == board [0][0])
-        
-         System.out.println("same");
-     else 
-         
-         System.out.println("Not same");
-       Check();
+
+       
      
      
     }
-    
-    public int Check()
+    public int replace(int a, int b)
     {
-       //this.PlaceQueen();
-      // int board[][] = new board [][];
-        if (board[0][0]  != board[3][2])
-      System.out.print("Solved");
-        else
-           return Check();
-        return Check();
-    }
+       
+
    //Work on this portion for the recursion to work.
    //May want to add a loop to check values if equal to 1 in each row/column.
-    
+    }
     
 }
-
