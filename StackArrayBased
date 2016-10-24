@@ -1,0 +1,105 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package postfixcalculator;
+
+/**
+ *
+ * @author Salvador
+ */
+public class StackArrayBased {
+    final int MAX_STACK = 50;
+    private int items [];
+    private int top;
+    private int k;
+    private int num1, num2;
+    
+public  void StackArrayBased()
+{
+    items = new int[MAX_STACK];
+    top = -1;
+    
+}
+    public boolean isEmpty()
+    {
+        return top == 0 ;
+        
+    }
+    
+    public boolean isFull()
+    {
+        
+        return top == MAX_STACK - 1;
+        
+    }
+    public void push(int newItem) throws StackException
+    {
+        if (isFull())
+        {
+            items[++top] = newItem;
+        }
+        else 
+        {
+            throw new StackException ( " Stack Exception on " 
+                    + "push: Stack is full");
+            
+        }
+    }
+    public void popAll()
+    {
+        items = new int[MAX_STACK];
+        top = -1;
+        
+    }
+     public int pop() throws StackException
+     {
+         
+         if (isEmpty())
+         {
+             
+             return items[top--];
+             
+         }
+         else
+         {
+             throw new StackException ("StackException on "
+             + "pop: stack empty");
+             
+         }
+         
+     }
+    public int peek() throws StackException
+    {
+        if (isEmpty())
+        {
+            return items[top];
+        }
+        else
+        {
+            throw new StackException("Stack exception on " 
+                    + "Peek - stack empty");
+        }
+    }
+
+    
+    public int getNum1()
+    {
+        return this.num1;
+    }
+    public int getNum2()
+    {
+        return this.num2;
+    }
+    
+    
+    public class StackException extends java.lang.RuntimeException
+{
+    public StackException(String s)
+    {
+        super(s);
+    }
+}
+}
+
