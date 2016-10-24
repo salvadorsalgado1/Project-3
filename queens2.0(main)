@@ -1,0 +1,180 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package game;
+
+import java.util.Arrays;
+import java.util.*;
+/**
+ *
+ * @author Student-HSLH133
+ */
+public class Queens {
+   int x ;
+   int y;
+   int a,b;
+   int q;
+   int boardSize = 8;
+
+       
+ int[][] board = new int[boardSize][boardSize];//the 2d array
+
+ Scanner input = new Scanner(System.in);
+	//int VALUE is value you want to assign
+
+	
+   public void solution(int boardSize)
+   {
+       
+       for(int x = 0 ; x< board.length; x++)
+        {
+                for (int y = 0 ; y < board.length; y++)
+                {
+                    board[x][y] = 0;
+                }
+        }
+   }
+
+    public void Queens(int boardSize)
+   {
+
+        if(Place(1,board.length))
+        {
+            for (int x = 0; x < board[a].length; x++)
+            {
+                for (int y = 0; y < board[b].length; y++)
+                {
+                    System.out.print( board[x][y] + " " );
+                }
+               
+            }
+                            
+        }
+else
+        {
+            System.out.print("Cannot Solve");
+        }
+//public void Queens()
+//{
+//      for (int a = 0; a < board.length; a++) 
+//      {
+//        for (int b = 0; b < board[a].length; b++) 
+//        {
+//        System.out.print(board[a][b] + " ");
+//        }
+//        System.out.println();
+//      }
+        //System.out.print(Arrays.deepToString(board));
+//}
+   }
+    
+    
+    
+    public void PlaceQueen()
+    {  
+    
+        int board [] [] = new int [boardSize][boardSize];
+//    System.out.print("Enter your row: ");
+//        int a = input.nextInt();
+//     System.out.print("Enter your column: ");
+//     int b = input.nextInt();
+       
+       
+//    int a = 0;
+//        int b = 0;
+     System.out.println("Row: " + (a+1) +"\t"+"Column: "+( b+1));
+    
+   
+     
+     for(int x = 0 ; x < board[0].length; x++)
+	{           
+                 for(int y = 0 ; y < board[0].length; y++)
+	       {
+                   board[a][x] = 1;	                             
+	       }
+	}
+         for (int x = 0; x < board.length; x++) 
+      {
+        for (int y = 0; y < board[0].length; y++) 
+        {
+        System.out.print(board[x][y] + " ");
+        }
+        System.out.println();
+        
+      }
+     
+    }
+    public boolean Place( int q, int boardSize)
+    {
+		// will place the Queens one at a time, for column wise
+		if(q==boardSize){
+			//if we are here that means we have solved the problem
+			return true;
+		}
+		for (int a = 0; a < boardSize; a++) {
+			// check if queen can be placed row,col
+			if (DoPlace(board, a , q)) {
+				// place the queen
+				board[a][q] = 1;
+				// solve  for next queen
+				if(Place(q+1, boardSize)){
+					return true;
+				}
+				//if we are here that means above placement didn't work
+				//BACKTRACK
+				board[a][q]=0;
+			}
+		}
+		
+		return false;
+
+	}
+        
+        
+        
+        public boolean DoPlace(int[][] board, int a, int b) {
+		// since we are filling one column at a time,
+		// we will check if no queen is placed in that particular row
+		for (int x = 0; x < b; x++) {
+			if (board[a][x] == 1) {
+				return false;
+			}
+		}
+		// we are filling one column at a time,so we need to check the upper and
+		// diagonal as well
+		// check upper diagonal
+		for (int x = a, y = b; x >= 0 && y >= 0; x--, y--) {
+			if (board[x][y] == 1) {
+				return false;
+			}
+		}
+
+		// check lower diagonal
+		for (int x = a, y = a; x < board.length && y >= 0; x++, y--) {
+			if (board[x][y] == 1) {
+				return false;
+			}
+		}
+		// if we are here that means we are safe to place Queen at row,column
+		return true;
+	}
+
+        
+        
+        
+        
+        
+    
+   
+//
+//   //Work on this portion for the recursion to work.
+//   //May want to add a loop to check values if equal to 1 in each row/column.
+           
+//
+//   //Work on this portion for the recursion to work.
+//   //May want to add a loop to check values if equal to 1 in each row/column.
+   
+    
+}
