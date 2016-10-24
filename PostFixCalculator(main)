@@ -1,0 +1,123 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+package postfixcalculator;
+import java.util.*;
+/**
+ *
+ * @author Salvador
+ */
+public class PostfixCalculator  {
+    Scanner input = new Scanner (System.in);
+    private int items [];
+    public static final int MAX_ITEMS = 15;
+    StackArrayBased stacks = new StackArrayBased();
+    
+    
+    
+
+    public static void main(String[] args) 
+    {
+      StackArrayBased stacks = new StackArrayBased();
+      //stacks.peek();
+      
+      stacks.isFull();
+      
+    }
+    public void calculator (String n) {
+        StackArrayBased stacks = new StackArrayBased();
+        
+//        if (stacks.length() < 2)
+//            throw new IllegalArgumentException("Input expression: " + 
+//                                        expression + " invalid");
+
+
+        int num2 = stacks.pop();
+        int num1 = stacks.pop();
+        char operator = n.charAt(0);
+        switch (operator) {
+            case '+':
+              stacks.push(num1 + num2);
+              break;
+            case '-':
+              stacks.push(num1 - num2);
+              break;
+            case '*':
+              stacks.push(num1 * num2);
+              break;
+            case '/':
+              stacks.push(num1 / num2);
+              break;
+            default:
+                System.out.println("What is this? " + operator);
+        }
+        // System.out.println("So far: " + stacks.peek());
+    }
+    public int getResult() {
+
+        return (int)stacks.pop();
+    }
+    
+    private boolean isInteger(String in)
+    {
+
+    try{
+
+        int x = Integer.parseInt(in);
+
+        return true;
+
+    }
+
+ 
+
+    catch(NumberFormatException error){
+
+        return false;
+
+    }
+    
+    
+
+}
+
+    
+
+/**
+
+ * Private method that checks if the String is an operator.
+
+ * Used in the calculatorFail method.
+
+ *
+
+ * @return  Returns true if the String is an operator.
+
+ */
+
+
+private boolean isOperator(String in){
+
+        String[] operator = {"+", "-", "*", "/"};
+
+        for (int i = 0; i < operator.length; i++){
+
+            if(in.equals(operator[i])){;
+
+                return true;
+
+            }
+
+        }
+
+        return false;
+
+    }
+
+
+    
+}
