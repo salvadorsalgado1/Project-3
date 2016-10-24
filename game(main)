@@ -28,7 +28,8 @@ public class Game {
    
     public static void main(String[] args) {
        Queens s = new Queens();
-      
+     // int boardSize = 8
+     //s.Queens2.0(boardSize);
       // s.Queens();
      s.PlaceQueen();
     }
